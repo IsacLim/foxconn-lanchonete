@@ -1,0 +1,127 @@
+object frManutIngredientes: TfrManutIngredientes
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = Single
+  Caption = 'Manuten'#231#227'o de Ingredientes'
+  ClientHeight = 194
+  ClientWidth = 427
+  Position = DesktopCenter
+  StyleBook = frStyle.StyleBook1
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  DesignerMasterStyle = 0
+  object pnFundo: TPanel
+    Align = Client
+    Size.Width = 427.000000000000000000
+    Size.Height = 194.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object gbInformacoes: TGroupBox
+      Position.X = 8.000000000000000000
+      Position.Y = 68.000000000000000000
+      Size.Width = 409.000000000000000000
+      Size.Height = 118.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Informa'#231#245'es'
+      TabOrder = 1
+      object btIncluir: TCornerButton
+        Position.X = 8.000000000000000000
+        Position.Y = 75.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 89.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Text = '&Incluir'
+        TextSettings.Trimming = None
+        XRadius = 3.000000000000000000
+        YRadius = 3.000000000000000000
+        OnClick = btIncluirClick
+      end
+      object edNome: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 1
+        Position.X = 8.000000000000000000
+        Position.Y = 41.000000000000000000
+        Size.Width = 283.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object btExcluir: TCornerButton
+        Position.X = 202.000000000000000000
+        Position.Y = 75.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 89.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        Text = '&Excluir'
+        TextSettings.Trimming = None
+        XRadius = 3.000000000000000000
+        YRadius = 3.000000000000000000
+        OnClick = btExcluirClick
+      end
+      object btAlterar: TCornerButton
+        Position.X = 105.000000000000000000
+        Position.Y = 75.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 89.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Text = '&Alterar'
+        TextSettings.Trimming = None
+        XRadius = 3.000000000000000000
+        YRadius = 3.000000000000000000
+        OnClick = btAlterarClick
+      end
+      object lbNome: TLabel
+        Position.X = 8.000000000000000000
+        Position.Y = 21.000000000000000000
+        Text = 'Nome'
+        TabOrder = 39
+      end
+      object lbPreco: TLabel
+        Position.X = 311.000000000000000000
+        Position.Y = 23.000000000000000000
+        Text = 'Pre'#231'o'
+        TabOrder = 37
+      end
+      object edPreco: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 2
+        Position.X = 311.000000000000000000
+        Position.Y = 41.000000000000000000
+        Size.Width = 82.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        OnTyping = edPrecoTyping
+      end
+    end
+    object gbPesquisar: TGroupBox
+      Position.X = 8.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 409.000000000000000000
+      Size.Height = 55.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Pesquisar'
+      TabOrder = 0
+      object edPesquisa: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 0
+        Position.X = 8.000000000000000000
+        Position.Y = 21.000000000000000000
+        Size.Width = 283.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        OnKeyDown = edPesquisaKeyDown
+        OnKeyUp = edPesquisaKeyDown
+      end
+    end
+  end
+end

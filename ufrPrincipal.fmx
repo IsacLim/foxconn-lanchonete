@@ -1,0 +1,120 @@
+﻿object frPrincipal: TfrPrincipal
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  Caption = 'Menu'
+  ClientHeight = 600
+  ClientWidth = 1000
+  Position = DesktopCenter
+  StyleBook = frStyle.StyleBook1
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  DesignerMasterStyle = 0
+  object pnFundo: TPanel
+    Align = Client
+    Size.Width = 1000.000000000000000000
+    Size.Height = 600.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object pnMenu: TPanel
+      Align = Left
+      Size.Width = 180.000000000000000000
+      Size.Height = 600.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object btCadastros: TCornerButton
+        Position.X = 8.000000000000000000
+        Position.Y = 552.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 169.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Text = 'Cadastros'
+        TextSettings.Trimming = None
+        XRadius = 3.000000000000000000
+        YRadius = 3.000000000000000000
+        OnClick = btCadastrosClick
+      end
+      object btLanches: TCornerButton
+        Position.X = 8.000000000000000000
+        Position.Y = 80.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 169.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'Lanches'
+        TextSettings.Trimming = None
+        XRadius = 3.000000000000000000
+        YRadius = 3.000000000000000000
+        OnClick = btLanchesClick
+      end
+      object btPorções: TCornerButton
+        Position.X = 8.000000000000000000
+        Position.Y = 115.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 169.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'Por'#231#245'es'
+        TextSettings.Trimming = None
+        XRadius = 3.000000000000000000
+        YRadius = 3.000000000000000000
+        OnClick = btPorçõesClick
+      end
+      object btBebidas: TCornerButton
+        Position.X = 8.000000000000000000
+        Position.Y = 150.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 169.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Bebidas'
+        TextSettings.Trimming = None
+        XRadius = 3.000000000000000000
+        YRadius = 3.000000000000000000
+        OnClick = btBebidasClick
+      end
+    end
+    object pnCarrinho: TPanel
+      Align = Right
+      Position.X = 750.000000000000000000
+      Size.Width = 250.000000000000000000
+      Size.Height = 600.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+    end
+    object pnProdutos: TPanel
+      Align = Client
+      Size.Width = 570.000000000000000000
+      Size.Height = 600.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object sbProdutos: TScrollBox
+        Align = Client
+        Size.Width = 570.000000000000000000
+        Size.Height = 600.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Viewport.Width = 570.000000000000000000
+        Viewport.Height = 600.000000000000000000
+        object flProdutos: TFlowLayout
+          Align = Client
+          Size.Width = 570.000000000000000000
+          Size.Height = 600.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Justify = Left
+          JustifyLastLine = Left
+          FlowDirection = LeftToRight
+        end
+      end
+    end
+  end
+end

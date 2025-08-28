@@ -1,0 +1,92 @@
+object frMenuCadastros: TfrMenuCadastros
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = Single
+  Caption = 'Op'#231#245'es de Cadastro'
+  ClientHeight = 237
+  ClientWidth = 240
+  Position = DesktopCenter
+  StyleBook = frStyle.StyleBook1
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object pnFundo: TPanel
+    Align = Client
+    Size.Width = 240.000000000000000000
+    Size.Height = 237.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object btLanches: TCornerButton
+      Position.X = 48.000000000000000000
+      Position.Y = 16.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      Size.Width = 137.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Lanches'
+      TextSettings.Trimming = None
+      XRadius = 3.000000000000000000
+      YRadius = 3.000000000000000000
+      OnClick = btLanchesClick
+    end
+    object btIngredientes: TCornerButton
+      Position.X = 48.000000000000000000
+      Position.Y = 57.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      Size.Width = 137.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Ingredientes'
+      TextSettings.Trimming = None
+      XRadius = 3.000000000000000000
+      YRadius = 3.000000000000000000
+      OnClick = btIngredientesClick
+    end
+    object btClientes: TCornerButton
+      Position.X = 48.000000000000000000
+      Position.Y = 180.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      Size.Width = 137.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'Clientes'
+      TextSettings.Trimming = None
+      XRadius = 3.000000000000000000
+      YRadius = 3.000000000000000000
+      OnClick = btClientesClick
+    end
+    object btBebidas: TCornerButton
+      Position.X = 48.000000000000000000
+      Position.Y = 98.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      Size.Width = 137.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'Bebidas'
+      TextSettings.Trimming = None
+      XRadius = 3.000000000000000000
+      YRadius = 3.000000000000000000
+      OnClick = btBebidasClick
+    end
+    object btAcompanhamentos: TCornerButton
+      Position.X = 48.000000000000000000
+      Position.Y = 139.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      Size.Width = 137.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Por'#231#245'es'
+      TextSettings.Trimming = None
+      XRadius = 3.000000000000000000
+      YRadius = 3.000000000000000000
+      OnClick = btAcompanhamentosClick
+    end
+  end
+end

@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{ED3C9357-865F-437B-9372-5441A24F1AC4}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Lanchonete.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TesteLanchonete.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Lanchonete">
+        <MSBuild Projects="Lanchonete.dproj"/>
+    </Target>
+    <Target Name="Lanchonete:Clean">
+        <MSBuild Projects="Lanchonete.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Lanchonete:Make">
+        <MSBuild Projects="Lanchonete.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TesteLanchonete">
+        <MSBuild Projects="TesteLanchonete.dproj"/>
+    </Target>
+    <Target Name="TesteLanchonete:Clean">
+        <MSBuild Projects="TesteLanchonete.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TesteLanchonete:Make">
+        <MSBuild Projects="TesteLanchonete.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Lanchonete;TesteLanchonete"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Lanchonete:Clean;TesteLanchonete:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Lanchonete:Make;TesteLanchonete:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

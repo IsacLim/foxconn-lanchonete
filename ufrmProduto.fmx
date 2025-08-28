@@ -1,0 +1,78 @@
+object frmProduto: TfrmProduto
+  Size.Width = 269.000000000000000000
+  Size.Height = 240.000000000000000000
+  Size.PlatformDefault = False
+  object pnFundo: TPanel
+    Align = Client
+    Size.Width = 269.000000000000000000
+    Size.Height = 240.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Image1: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Position.X = 87.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 100.000000000000000000
+      Size.Height = 100.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object lbNome: TLabel
+      StyledSettings = [Family, Size, FontColor]
+      Position.X = 48.000000000000000000
+      Position.Y = 113.000000000000000000
+      Size.Width = 168.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00060000000000000004000000}
+      TextSettings.HorzAlign = Center
+      Text = 'lbNome'
+      TabOrder = 4
+    end
+    object lbListaIngredientes: TLabel
+      Position.X = 48.000000000000000000
+      Position.Y = 138.000000000000000000
+      Size.Width = 168.000000000000000000
+      Size.Height = 38.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.VertAlign = Leading
+      Text = 'Label1'
+      TabOrder = 2
+    end
+    object lbPreco: TLabel
+      StyledSettings = [Family, Size, FontColor]
+      Position.X = 48.000000000000000000
+      Position.Y = 184.000000000000000000
+      Size.Width = 177.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.HorzAlign = Trailing
+      Text = 'Label1'
+      TabOrder = 3
+    end
+    object btAdicionar: TCornerButton
+      Position.X = 48.000000000000000000
+      Position.Y = 209.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      TabOrder = 1
+      Text = 'Adicionar'
+      TextSettings.Trimming = None
+      XRadius = 3.000000000000000000
+      YRadius = 3.000000000000000000
+      OnClick = btAdicionarClick
+    end
+    object btModificar: TCornerButton
+      Position.X = 136.000000000000000000
+      Position.Y = 209.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      TabOrder = 0
+      Text = 'Modificar'
+      TextSettings.Trimming = None
+      Visible = False
+      XRadius = 3.000000000000000000
+      YRadius = 3.000000000000000000
+    end
+  end
+end

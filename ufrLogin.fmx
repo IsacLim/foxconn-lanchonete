@@ -1,0 +1,67 @@
+object frLogin: TfrLogin
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = Single
+  Caption = 'Login'
+  ClientHeight = 200
+  ClientWidth = 265
+  Position = DesktopCenter
+  StyleBook = frStyle.StyleBook1
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnShow = FormShow
+  DesignerMasterStyle = 0
+  object pnFundo: TPanel
+    Align = Client
+    Size.Width = 265.000000000000000000
+    Size.Height = 200.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object edLogin: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 0
+      Position.X = 80.000000000000000000
+      Position.Y = 48.000000000000000000
+    end
+    object edSenha: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 1
+      Password = True
+      Position.X = 80.000000000000000000
+      Position.Y = 104.000000000000000000
+    end
+    object lbSenha: TLabel
+      Position.X = 80.000000000000000000
+      Position.Y = 88.000000000000000000
+      Size.Width = 100.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Senha'
+      TabOrder = 4
+    end
+    object lbLogin: TLabel
+      Position.X = 80.000000000000000000
+      Position.Y = 32.000000000000000000
+      Size.Width = 100.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Login'
+      TabOrder = 3
+    end
+    object btLogar: TCornerButton
+      ModalResult = 1
+      Position.X = 91.000000000000000000
+      Position.Y = 144.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      TabOrder = 2
+      Text = 'Ok'
+      TextSettings.Trimming = None
+      XRadius = 3.000000000000000000
+      YRadius = 3.000000000000000000
+      OnClick = btLogarClick
+    end
+  end
+end

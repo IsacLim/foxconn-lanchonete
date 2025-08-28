@@ -1,0 +1,59 @@
+object frPesquisarCliente: TfrPesquisarCliente
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = Single
+  Caption = 'Pesquisar Cliente'
+  ClientHeight = 108
+  ClientWidth = 325
+  Position = DesktopCenter
+  StyleBook = frStyle.StyleBook1
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnShow = FormShow
+  DesignerMasterStyle = 0
+  object pnFundo: TPanel
+    Align = Client
+    Size.Width = 325.000000000000000000
+    Size.Height = 108.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object btSelecionar: TCornerButton
+      StyledSettings = [Family, FontColor]
+      ModalResult = 1
+      Position.X = 224.000000000000000000
+      Position.Y = 71.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      Size.Width = 89.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 40
+      Text = '&Selecionar'
+      TextSettings.Trimming = None
+      XRadius = 3.000000000000000000
+      YRadius = 3.000000000000000000
+    end
+    object gbPesquisar: TGroupBox
+      Position.X = 8.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 305.000000000000000000
+      Size.Height = 55.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Pesquisar'
+      TabOrder = 0
+      object edPesquisa: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 0
+        Position.X = 8.000000000000000000
+        Position.Y = 21.000000000000000000
+        Size.Width = 283.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        OnKeyDown = edPesquisaKeyDown
+        OnKeyUp = edPesquisaKeyDown
+      end
+    end
+  end
+end

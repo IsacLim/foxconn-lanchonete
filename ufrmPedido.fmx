@@ -1,0 +1,71 @@
+object frmPedido: TfrmPedido
+  Size.Width = 250.000000000000000000
+  Size.Height = 600.000000000000000000
+  Size.PlatformDefault = False
+  object pnFundo: TPanel
+    Align = Client
+    Size.Width = 250.000000000000000000
+    Size.Height = 600.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object lbCarrinho: TLabel
+      StyledSettings = [FontColor]
+      Position.X = 17.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 208.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Family = 'Segoe Print'
+      TextSettings.Font.Size = 20.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000200000004000000}
+      TextSettings.HorzAlign = Center
+      Text = 'Carrinho'
+      TabOrder = 2
+    end
+    object btFinalizar: TCornerButton
+      Position.X = 88.000000000000000000
+      Position.Y = 570.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      TabOrder = 3
+      Text = 'Finalizar'
+      TextSettings.Trimming = None
+      XRadius = 3.000000000000000000
+      YRadius = 3.000000000000000000
+      OnClick = btFinalizarClick
+    end
+    object lbTotal: TLabel
+      Position.X = 72.000000000000000000
+      Position.Y = 527.000000000000000000
+      Size.Width = 157.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Trailing
+      Text = 'Total: R$ 0,00'
+      TabOrder = 1
+    end
+    object lbListaItens: TListBox
+      Position.X = 17.000000000000000000
+      Position.Y = 41.000000000000000000
+      Size.Width = 212.000000000000000000
+      Size.Height = 478.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      DisableFocusEffect = True
+      DefaultItemStyles.ItemStyle = ''
+      DefaultItemStyles.GroupHeaderStyle = ''
+      DefaultItemStyles.GroupFooterStyle = ''
+      Viewport.Width = 208.000000000000000000
+      Viewport.Height = 474.000000000000000000
+    end
+    object lbTotalUsd: TLabel
+      Position.X = 72.000000000000000000
+      Position.Y = 545.000000000000000000
+      Size.Width = 157.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Trailing
+      Text = 'Total: $ 0.00'
+      TabOrder = 0
+    end
+  end
+end

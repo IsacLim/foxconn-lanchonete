@@ -1,0 +1,202 @@
+object frManutLanches: TfrManutLanches
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = Single
+  Caption = 'Manuten'#231#227'o dos Lanches'
+  ClientHeight = 395
+  ClientWidth = 519
+  Position = DesktopCenter
+  StyleBook = frStyle.StyleBook1
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  DesignerMasterStyle = 0
+  object pnFundo: TPanel
+    Align = Client
+    Size.Width = 519.000000000000000000
+    Size.Height = 395.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object gbInformacoes: TGroupBox
+      Position.X = 8.000000000000000000
+      Position.Y = 71.000000000000000000
+      Size.Width = 503.000000000000000000
+      Size.Height = 314.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Informa'#231#245'es'
+      TabOrder = 1
+      object btIncluir: TCornerButton
+        Position.X = 10.000000000000000000
+        Position.Y = 272.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 89.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Text = '&Incluir'
+        TextSettings.Trimming = None
+        XRadius = 3.000000000000000000
+        YRadius = 3.000000000000000000
+        OnClick = btIncluirClick
+      end
+      object edNome: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 1
+        Position.X = 8.000000000000000000
+        Position.Y = 41.000000000000000000
+        Size.Width = 375.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object btExcluir: TCornerButton
+        Position.X = 204.000000000000000000
+        Position.Y = 272.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 89.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        Text = '&Excluir'
+        TextSettings.Trimming = None
+        XRadius = 3.000000000000000000
+        YRadius = 3.000000000000000000
+        OnClick = btExcluirClick
+      end
+      object btAlterar: TCornerButton
+        Position.X = 107.000000000000000000
+        Position.Y = 272.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 89.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        Text = '&Alterar'
+        TextSettings.Trimming = None
+        XRadius = 3.000000000000000000
+        YRadius = 3.000000000000000000
+        OnClick = btAlterarClick
+      end
+      object lbNome: TLabel
+        Position.X = 8.000000000000000000
+        Position.Y = 21.000000000000000000
+        Text = 'Nome'
+        TabOrder = 38
+      end
+      object gbIngredientes: TGroupBox
+        Position.X = 8.000000000000000000
+        Position.Y = 70.000000000000000000
+        Size.Width = 375.000000000000000000
+        Size.Height = 195.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Ingredientes'
+        TabOrder = 39
+        object gdIngredientes: TStringGrid
+          CanFocus = True
+          ClipChildren = True
+          Position.X = 8.000000000000000000
+          Position.Y = 51.000000000000000000
+          Size.Width = 327.000000000000000000
+          Size.Height = 136.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 3
+          RowCount = 0
+          Options = [Tabs, Header]
+          OnDrawColumnCell = gdIngredientesDrawColumnCell
+          Viewport.Width = 323.000000000000000000
+          Viewport.Height = 111.000000000000000000
+          object StringColumn1: TStringColumn
+            Header = 'Ingredientes'
+            HeaderSettings.TextSettings.WordWrap = False
+            Padding.Left = 0.000000000000000000
+            Padding.Top = 0.000000000000000000
+            Padding.Right = 0.000000000000000000
+            Padding.Bottom = 0.000000000000000000
+            Size.Width = 235.000000000000000000
+          end
+          object IntegerColumn1: TIntegerColumn
+            Header = 'Quantidade'
+            HeaderSettings.TextSettings.WordWrap = False
+            Padding.Left = 0.000000000000000000
+            Padding.Top = 0.000000000000000000
+            Padding.Right = 0.000000000000000000
+            Padding.Bottom = 0.000000000000000000
+            Size.Width = 70.000000000000000000
+          end
+          object StringColumn3: TStringColumn
+            HeaderSettings.TextSettings.WordWrap = False
+            Visible = False
+          end
+          object StringColumn4: TStringColumn
+            HeaderSettings.TextSettings.WordWrap = False
+            Visible = False
+          end
+        end
+        object edPesquisaIngr: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 2
+          Position.X = 8.000000000000000000
+          Position.Y = 21.000000000000000000
+          Size.Width = 327.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          OnKeyDown = edPesquisaIngrKeyDown
+          OnKeyUp = edPesquisaIngrKeyDown
+        end
+      end
+      object edPreco: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 37
+        Text = 'R$ 0,00'
+        Position.X = 391.000000000000000000
+        Position.Y = 241.000000000000000000
+        Enabled = False
+        Size.Width = 100.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object lbPreco: TLabel
+        Position.X = 391.000000000000000000
+        Position.Y = 221.000000000000000000
+        Size.Width = 107.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Pre'#231'o'
+        TabOrder = 40
+      end
+      object Image1: TImage
+        MultiResBitmap = <
+          item
+          end>
+        Position.X = 391.000000000000000000
+        Position.Y = 80.000000000000000000
+        Size.Width = 100.000000000000000000
+        Size.Height = 100.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object gbPesquisar: TGroupBox
+      Position.X = 8.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 503.000000000000000000
+      Size.Height = 55.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Pesquisar'
+      TabOrder = 0
+      object edPesquisa: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 0
+        Position.X = 8.000000000000000000
+        Position.Y = 21.000000000000000000
+        Size.Width = 375.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        OnKeyDown = edPesquisaKeyDown
+        OnKeyUp = edPesquisaKeyDown
+      end
+    end
+  end
+end
