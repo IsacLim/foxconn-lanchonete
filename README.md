@@ -15,7 +15,7 @@
 
 ## ▶️ Como Executar o Projeto
 
-1. Acesse a pasta `Win32/Release`.
+1. Extrair os executáveis do `Executaveis.rar` e nessa mesma pasta, colocar o arquivo `banco`.
 2. Clique duas vezes no arquivo **`Lanchonete.exe`**.
 3. Será exibida a tela do **Menu Principal**.
    - Na lateral esquerda, você encontrará as opções:
