@@ -1,70 +1,52 @@
 program TesteLanchonete;
 
-{$DEFINE TESTINSIGHT}
+{$APPTYPE CONSOLE}
 {$STRONGLINKTYPES ON}
+
 uses
   System.SysUtils,
-  Vcl.Forms,
-  {$IFDEF TESTINSIGHT}
-  TestInsight.DUnitX,
-  {$ELSE}
-  DUnitX.Loggers.Console,
-  {$ENDIF }
   DUnitX.TestFramework,
+  DUnitX.Loggers.Console,
   uTesteLanchonete in 'uTesteLanchonete.pas';
 
-{ keep comment here to protect the following conditional from being removed by the IDE when adding a unit }
-{$IFNDEF TESTINSIGHT}
 var
-  runner: ITestRunner;
-  results: IRunResults;
-  logger: ITestLogger;
-  nunitLogger : ITestLogger;
-{$ENDIF}
+  Runner: ITestRunner;
+  Results: IRunResults;
+  Logger: ITestLogger;
 begin
-{$IFDEF TESTINSIGHT}
-  Application.Initialize;
-  TestInsight.DUnitX.RunRegisteredTests;
-  Application.Run;
-  Sleep(60000);
-{$ELSE}
   try
-    //Check command line options, will exit if invalid
+    // Verifica parâmetros da linha de comando (opcional)
     TDUnitX.CheckCommandLine;
-    //Create the test runner
-    runner := TDUnitX.CreateRunner;
-    //Tell the runner to use RTTI to find Fixtures
-    runner.UseRTTI := True;
-    //When true, Assertions must be made during tests;
-    runner.FailsOnNoAsserts := False;
 
-    //tell the runner how we will log things
-    //Log to the console window if desired
-    if TDUnitX.Options.ConsoleMode <> TDunitXConsoleMode.Off then
-    begin
-      logger := TDUnitXConsoleLogger.Create(TDUnitX.Options.ConsoleMode = TDunitXConsoleMode.Quiet);
-      runner.AddLogger(logger);
-    end;
-    //Generate an NUnit compatible XML File
-    nunitLogger := TDUnitXXMLNUnitFileLogger.Create(TDUnitX.Options.XMLOutputFile);
-    runner.AddLogger(nunitLogger);
+    // Cria o runner
+    Runner := TDUnitX.CreateRunner;
+    Runner.UseRTTI := True;
+    Runner.FailsOnNoAsserts := False;
 
-    //Run tests
-    results := runner.Execute;
-    if not results.AllPassed then
-      System.ExitCode := EXIT_ERRORS;
+    // Logger no console
+    Logger := TDUnitXConsoleLogger.Create(True);
+    Runner.AddLogger(Logger);
 
-    {$IFNDEF CI}
-    //We don't want this happening when running under CI.
-    if TDUnitX.Options.ExitBehavior = TDUnitXExitBehavior.Pause then
-    begin
-      System.Write('Done.. press <Enter> key to quit.');
-      System.Readln;
-    end;
-    {$ENDIF}
+    // Executa os testes
+    Results := Runner.Execute;
+
+    // Retorna erro se algum teste falhar
+    if not Results.AllPassed then
+      System.ExitCode := 1
+    else
+      System.ExitCode := 0;
+
+    // Espera o usuário apertar Enter antes de fechar (opcional)
+    Writeln;
+    Writeln('Execução concluída. Pressione ENTER para sair...');
+    Readln;
+
   except
     on E: Exception do
-      System.Writeln(E.ClassName, ': ', E.Message);
+    begin
+      Writeln('Erro: ', E.ClassName, ': ', E.Message);
+      System.ExitCode := 1;
+      Readln;
+    end;
   end;
-{$ENDIF}
 end.
